@@ -1,0 +1,469 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<style>
+  @keyframes sunnyLookUp {
+  0%, 100% { transform: rotate(0deg); }
+  45% { transform: rotate(-10deg); } /* head tilt upward */
+  55% { transform: rotate(-10deg); }
+}
+
+@keyframes butterflyFly {
+  0%   { transform: translateX(110vw) translateY(0); }
+  25%  { transform: translateX(75vw) translateY(-20px); }
+  50%  { transform: translateX(50vw) translateY(20px); }
+  75%  { transform: translateX(25vw) translateY(-20px); }
+  100% { transform: translateX(-10vw) translateY(0); }
+}
+
+
+  @keyframes leafFall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  50% { transform: translateY(60px) rotate(25deg); opacity: 0.8; }
+  100% { transform: translateY(120px) rotate(-30deg); opacity: 0; }
+}
+
+@keyframes leafFallAlt {
+  0% { transform: translateY(0) rotate(10deg); opacity: 1; }
+  50% { transform: translateY(80px) rotate(-10deg); opacity: 0.7; }
+  100% { transform: translateY(150px) rotate(20deg); opacity: 0; }
+}
+
+@keyframes leafFallAlt2 {
+  0% { transform: translateY(0) rotate(-15deg); opacity: 1; }
+  50% { transform: translateY(70px) rotate(15deg); opacity: 0.7; }
+  100% { transform: translateY(140px) rotate(-25deg); opacity: 0; }
+}
+
+@keyframes wingFlap {
+  0%, 100% { transform: scaleY(1) rotate(0deg); }
+  50% { transform: scaleY(1.2) rotate(2deg); }
+}
+
+ @keyframes tailWiggle {
+  0%, 100% { transform: rotate(8deg); }
+  50% { transform: rotate(-8deg); }
+}
+
+  @keyframes birdFlap {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(30deg); }
+  }
+
+  @keyframes birdFlyRight {
+    0% { transform: translateX(-100px); }
+    100% { transform: translateX(110vw); }
+  }
+
+  @keyframes birdFlyLeft {
+    0% { transform: translateX(110vw); }
+    100% { transform: translateX(-100px); }
+  }
+
+  @keyframes duckHop {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  @keyframes duckWalk {
+    0% { left: -200px; }
+    100% { left: 100%; }
+  }
+
+  @keyframes sparkleBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
+  @keyframes waveFlag {
+    0%, 100% { transform: rotateZ(0deg); }
+    50% { transform: rotateZ(5deg); }
+  }
+
+  @keyframes cloudDriftRight {
+    0% { transform: translateX(-200px); }
+    100% { transform: translateX(100vw); }
+  }
+
+  @keyframes cloudDriftLeft {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-200px); }
+  }
+
+  @keyframes blink {
+    0%, 90%, 100% { height: 5px; }
+    92% { height: 0; }
+    94% { height: 5px; }
+  }
+
+  @keyframes legMove {
+    0%, 100% { transform: rotate(10deg); }
+    50% { transform: rotate(-10deg); }
+  }
+</style>
+</head>
+<body>
+
+<div style="position: relative; width: 100%; height: 300px; overflow: hidden; background: radial-gradient(circle at top center, #ffffff 0%, #b3e2ff 30%, #c2f9a7 60%, #a1e887 100%); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+
+<!-- Sun -->
+<div style="position:absolute; top:20px; left:20px; width:50px; height:50px; background:radial-gradient(circle, #fff85e, #fdd835); border-radius:50%; box-shadow:0 0 15px #fdd835;"></div>
+
+<!-- Fluffy Cloud 1 -->
+<div style="position:absolute; top:40px; left:0; width:80px; height:40px; background:#fff; border-radius:40px; opacity:0.8; animation:cloudDriftRight 60s linear infinite;">
+  <div style="position:absolute; width:40px; height:40px; background:#fff; border-radius:50%; left:-20px; top:0;"></div>
+  <div style="position:absolute; width:50px; height:50px; background:#fff; border-radius:50%; left:30px; top:-10px;"></div>
+</div>
+
+<!-- Fluffy Cloud 2 -->
+<div style="position:absolute; top:60px; left:0; width:60px; height:30px; background:#fff; border-radius:30px; opacity:0.6; animation:cloudDriftLeft 50s linear infinite;">
+  <div style="position:absolute; width:30px; height:30px; background:#fff; border-radius:50%; left:-15px;"></div>
+  <div style="position:absolute; width:40px; height:40px; background:#fff; border-radius:50%; left:20px; top:-10px;"></div>
+</div>
+
+<!-- Fluffy Cloud 3 -->
+<div style="position:absolute; top:20px; left:-100px; width:100px; height:50px; background:#fff; border-radius:50px; opacity:0.5; animation:cloudDriftRight 90s linear infinite;">
+  <div style="position:absolute; width:50px; height:50px; background:#fff; border-radius:50%; left:-25px;"></div>
+  <div style="position:absolute; width:60px; height:60px; background:#fff; border-radius:50%; left:40px; top:-15px;"></div>
+</div>
+<!-- Tree -->
+<div style="position:absolute; bottom:16px; left:70%; z-index:1;">
+  <!-- Trunk -->
+  <div style="width:12px; height:40px; background:#8B5E3C; border-radius:2px;"></div>
+  <!-- Canopy -->
+  <div style="position:absolute; bottom:30px; left:-20px; width:60px; height:60px; background:#5cb85c; border-radius:50%; box-shadow:
+    -20px 0 #5cb85c,
+    20px 0 #5cb85c,
+    0 -20px #5cb85c;">
+  </div>
+  <!-- Leaves falling -->
+<div style="position:absolute; width:12px; height:14px; background:#c76c2b; border-radius:50%; animation:leafFall 6s ease-in-out infinite; left:-10px; top:0;"></div>
+<div style="position:absolute; width:12px; height:14px; background:#b35d1f; border-radius:50%; animation:leafFallAlt 8s ease-in-out infinite; left:20px; top:0;"></div>
+<div style="position:absolute; width:10px; height:12px; background:#e48e35; border-radius:50%; animation:leafFallAlt2 10s ease-in-out infinite; left:5px; top:0;"></div>
+  <!-- Falling Leaf -->
+<div style="
+position:absolute;
+bottom:80px;
+left:72%;
+width:12px;
+height:14px;
+background:#c76c2b;
+border-radius:50% 50% 50% 50%;
+transform:rotate(-15deg);
+animation:leafFall 6s ease-in-out infinite;
+z-index:2;">
+</div>
+
+</div>
+
+
+<!-- Rainbow path -->
+<div style="position:absolute; bottom:0; width:100%; height:16px; background:linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); z-index:0;"></div>
+<!-- Grass Layer -->
+<div style="
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:30px;
+  background:repeating-linear-gradient(
+    -45deg,
+    #7ac95f,
+    #7ac95f 4px,
+    #69b24e 4px,
+    #69b24e 8px
+  );
+  z-index:1;
+  border-top-left-radius:8px;
+  border-top-right-radius:8px;
+  box-shadow:inset 0 3px 6px rgba(0,0,0,0.1);">
+</div>
+
+<!-- Sunny the Safety Duck -->
+<div style="position:absolute; bottom:0; left:-200px; width:200px; height:160px; animation:duckWalk 35s linear infinite, duckHop 1.5s ease-in-out infinite; z-index:2; cursor:pointer;" onclick="this.querySelector('.speech').style.display = this.querySelector('.speech').style.display === 'block' ? 'none' : 'block';">
+  <!-- Speech Bubble -->
+  <div class="speech" id="sunnySpeech" style="display:none; position:absolute; bottom:160px; left:60px; background:#ffffff; padding:10px 14px; border-radius:12px; font-size:13px; font-family:sans-serif; box-shadow:0 4px 8px rgba(0,0,0,0.2); max-width:180px; z-index:6;">
+    <span style="position:absolute; bottom:-10px; left:25px; width:0; height:0; border-left:10px solid transparent; border-right:10px solid transparent; border-top:10px solid #fff;"></span>
+    <span id="speechText"><strong>Hi!</strong> I'm <em>Sunny</em> the Safety Duck 🌈✨</span>
+  </div>
+  
+
+  <!-- Flag -->
+  <div style="position:absolute; bottom:55px; left:105px; transform:rotate(-15deg); z-index:5;">
+    <div style="width:4px; height:60px; background:black;"></div>
+    <div style="width:70px; height:30px; background:linear-gradient(to bottom, red, orange, yellow, green, blue, violet); border:1px solid black; position:absolute; left:-70px; bottom:30px; transform-origin:right center; animation:waveFlag 1s ease-in-out infinite;"></div>
+  </div>
+
+  <!-- Hat -->
+  <div style="width:50px; height:18px; background:#ffcc00; border:2px solid #d4a900; border-radius:10px 10px 0 0; position:absolute; bottom:130px; left:112px; font-family:sans-serif; font-size:9px; font-weight:bold; color:#333; display:flex; align-items:center; justify-content:center; z-index:6;">SAFETY</div>
+
+  <!-- Head (with look-up animation) -->
+<div style="
+position:absolute;
+bottom:100px;
+left:120px;
+width:30px;
+height:30px;
+background:#fff46e;
+border-radius:50%;
+z-index:5;
+transform-origin:center;
+animation:sunnyLookUp 20s linear infinite;">
+
+<!-- Eye -->
+<div style="width:5px; height:5px; background:black; border-radius:50%; position:absolute; top:6px; right:8px; animation:blink 4s infinite;"></div>
+
+<!-- Beak -->
+<div style="width:12px; height:6px; background:orange; border-radius:2px; position:absolute; top:12px; right:-10px;"></div>
+
+<!-- Smile -->
+<div style="position:absolute; width:10px; height:6px; border-bottom:2px solid #d2691e; border-radius:50%; top:14px; left:16px;"></div>
+</div>
+
+
+  <!-- Neck -->
+  <div style="position:absolute; bottom:70px; left:125px; width:20px; height:30px; background:#fff46e; border-radius:50%;"></div>
+
+  <!-- Body -->
+  <div style="position:absolute; bottom:30px; left:80px; width:90px; height:50px; background:#fff46e; border-radius:50%;">
+    <div style="width:30px; height:20px; background:gold; border-radius:50%; position:absolute; bottom:15px; left:30px;"></div>
+  </div>
+<!-- Tail (highlighted + realistic middle feather) -->
+<div style="
+  position:absolute;
+  bottom:58px;
+  left:66px;
+  transform-origin:left center;
+  transform:rotate(20deg);
+  animation:tailWiggle 0.8s infinite;
+  z-index:4;">
+
+  <!-- Feather 1 -->
+  <div style="
+    position:absolute;
+    width:12px;
+    height:6px;
+    background:linear-gradient(135deg, #fff46e, #fffaa3);
+    border-radius:50% 50% 50% 0;
+    transform:rotate(-20deg);
+    left:0;
+    top:0;"></div>
+
+  <!-- Feather 2 (longer middle feather) -->
+  <div style="
+    position:absolute;
+    width:14px;
+    height:8px;
+    background:linear-gradient(135deg, #fff46e, #fffaa3);
+    border-radius:50% 50% 50% 0;
+    transform:rotate(0deg);
+    left:4px;
+    top:1px;"></div>
+
+  <!-- Feather 3 -->
+  <div style="
+    position:absolute;
+    width:12px;
+    height:6px;
+    background:linear-gradient(135deg, #fff46e, #fffaa3);
+    border-radius:50% 50% 50% 0;
+    transform:rotate(20deg);
+    left:9px;
+    top:2px;"></div>
+</div>
+
+
+  <!-- Legs -->
+  <div style="width:6px; height:20px; background:orange; border-radius:3px; position:absolute; bottom:10px; left:95px; transform-origin:top center; animation:legMove 0.8s infinite;"></div>
+  <div style="width:12px; height:6px; background:orange; border-radius:50%; position:absolute; bottom:6px; left:90px;"></div>
+  <div style="width:6px; height:20px; background:orange; border-radius:3px; position:absolute; bottom:10px; left:110px; transform-origin:top center; animation:legMove 0.8s infinite reverse;"></div>
+  <div style="width:12px; height:6px; background:orange; border-radius:50%; position:absolute; bottom:6px; left:105px;"></div>
+
+  <!-- Sparkles -->
+  <div style="width:8px; height:8px; background:red; border-radius:50%; position:absolute; bottom:4px; left:10px; animation:sparkleBounce 2s infinite;"></div>
+  <div style="width:8px; height:8px; background:orange; border-radius:50%; position:absolute; bottom:4px; left:30px; animation:sparkleBounce 2.2s infinite;"></div>
+  <div style="width:8px; height:8px; background:yellow; border-radius:50%; position:absolute; bottom:4px; left:50px; animation:sparkleBounce 2.4s infinite;"></div>
+  <div style="width:8px; height:8px; background:green; border-radius:50%; position:absolute; bottom:4px; left:70px; animation:sparkleBounce 2.6s infinite;"></div>
+  <div style="width:8px; height:8px; background:blue; border-radius:50%; position:absolute; bottom:4px; left:90px; animation:sparkleBounce 2.8s infinite;"></div>
+  <div style="width:8px; height:8px; background:violet; border-radius:50%; position:absolute; bottom:4px; left:110px; animation:sparkleBounce 3s infinite;"></div>
+</div>
+<!-- Rainbow Birds -->
+<!-- Bird 1 -->
+<div onclick="showChirp(this)" style="position:absolute; top:30px; left:-100px; animation:birdFlyRight 45s linear infinite; cursor:pointer;">
+  <div style="position: relative; width: 40px; height: 20px;">
+    <div style="position:absolute; top:-6px; left:5px; width:20px; height:10px; background:linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); border-radius:50%; transform-origin:bottom center; animation:birdFlap 0.5s ease-in-out infinite;"></div>
+    <div style="width:30px; height:16px; background:linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); border-radius:50%; position:absolute; top:4px;"></div>
+    <div style="width:12px; height:12px; background:#fff; border-radius:50%; position:absolute; top:2px; left:20px;"></div>
+    <div style="width:4px; height:4px; background:black; border-radius:50%; position:absolute; top:5px; left:25px;"></div>
+    <div style="width:0; height:0; border-left:5px solid orange; border-top:3px solid transparent; border-bottom:3px solid transparent; position:absolute; top:6px; left:31px;"></div>
+    <div class="chirp-bubble" style="display:none; position:absolute; bottom:20px; left:-5px; background:white; padding:4px 8px; border-radius:10px; font-size:10px; font-family:sans-serif; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+      chirp!
+      <span style="position:absolute; bottom:-6px; left:10px; width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-top:6px solid white;"></span>
+    </div>
+  </div>
+</div>
+
+<!-- Bird 2 -->
+<div onclick="showChirp(this)" style="position:absolute; top:90px; left:110vw; animation:birdFlyLeft 55s linear infinite; cursor:pointer;">
+  <div style="position: relative; width: 40px; height: 20px;">
+    <div style="position:absolute; top:-6px; left:5px; width:20px; height:10px; background:linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); border-radius:50%; transform-origin:bottom center; animation:birdFlap 0.5s ease-in-out infinite;"></div>
+    <div style="width:30px; height:16px; background:linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); border-radius:50%; position:absolute; top:4px;"></div>
+    <div style="width:12px; height:12px; background:#fff; border-radius:50%; position:absolute; top:2px; left:20px;"></div>
+    <div style="width:4px; height:4px; background:black; border-radius:50%; position:absolute; top:5px; left:25px;"></div>
+    <div style="width:0; height:0; border-left:5px solid orange; border-top:3px solid transparent; border-bottom:3px solid transparent; position:absolute; top:6px; left:31px;"></div>
+    <div class="chirp-bubble" style="display:none; position:absolute; bottom:20px; left:-5px; background:white; padding:4px 8px; border-radius:10px; font-size:10px; font-family:sans-serif; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+      chirp!
+      <span style="position:absolute; bottom:-6px; left:10px; width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-top:6px solid white;"></span>
+    </div>
+  </div>
+</div>
+
+<!-- Bird 3 -->
+<div onclick="showChirp(this)" style="position:absolute; top:150px; left:-100px; animation:birdFlyRight 65s linear infinite; cursor:pointer;">
+  <div style="position: relative; width: 40px; height: 20px;">
+    <div style="position:absolute; top:-6px; left:5px; width:20px; height:10px; background:linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); border-radius:50%; transform-origin:bottom center; animation:birdFlap 0.5s ease-in-out infinite;"></div>
+    <div style="width:30px; height:16px; background:linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); border-radius:50%; position:absolute; top:4px;"></div>
+    <div style="width:12px; height:12px; background:#fff; border-radius:50%; position:absolute; top:2px; left:20px;"></div>
+    <div style="width:4px; height:4px; background:black; border-radius:50%; position:absolute; top:5px; left:25px;"></div>
+    <div style="width:0; height:0; border-left:5px solid orange; border-top:3px solid transparent; border-bottom:3px solid transparent; position:absolute; top:6px; left:31px;"></div>
+    <div class="chirp-bubble" style="display:none; position:absolute; bottom:20px; left:-5px; background:white; padding:4px 8px; border-radius:10px; font-size:10px; font-family:sans-serif; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+      chirp!
+      <span style="position:absolute; bottom:-6px; left:10px; width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-top:6px solid white;"></span>
+    </div>
+  </div>
+</div>
+<!-- Red Butterfly -->
+<div style="position:absolute; top:60px; left:-50px; animation:butterflyFly 35s linear infinite; z-index:3;">
+  <div style="position:relative; width:40px; height:30px;">
+    
+    <!-- Left Wing -->
+    <div style="
+      position:absolute;
+      width:20px;
+      height:20px;
+      background:#e63946;
+      border-radius:50% 60% 60% 50%;
+      transform:rotate(-30deg);
+      left:0;
+      top:0;
+      animation:wingFlap 1s ease-in-out infinite;">
+    </div>
+
+    <!-- Right Wing -->
+    <div style="
+      position:absolute;
+      width:20px;
+      height:20px;
+      background:#e63946;
+      border-radius:60% 50% 50% 60%;
+      transform:rotate(30deg);
+      left:20px;
+      top:0;
+      animation:wingFlap 1s ease-in-out infinite reverse;">
+    </div>
+
+    <!-- Body -->
+    <div style="position:absolute; width:4px; height:22px; background:#222; border-radius:2px; left:18px; top:4px;"></div>
+
+    <!-- Antennae -->
+    <div style="position:absolute; width:2px; height:10px; background:#222; border-radius:2px; left:17px; top:-8px; transform:rotate(-20deg);"></div>
+    <div style="position:absolute; width:2px; height:10px; background:#222; border-radius:2px; left:21px; top:-8px; transform:rotate(20deg);"></div>
+  </div>
+</div>
+<!-- Cute Blooming Flower -->
+<div id="flower" style="position:absolute; bottom:16px; left:60%; width:24px; height:24px; z-index:2; pointer-events:none;">
+  <!-- Petals -->
+  <div style="position:absolute; width:100%; height:100%; transform:scale(0.5); transition:transform 0.5s ease;" id="flower-petals">
+    <div style="position:absolute; width:10px; height:10px; background:#ff69b4; border-radius:50%; top:0; left:7px;"></div>
+    <div style="position:absolute; width:10px; height:10px; background:#ff69b4; border-radius:50%; top:7px; left:0;"></div>
+    <div style="position:absolute; width:10px; height:10px; background:#ff69b4; border-radius:50%; top:7px; left:14px;"></div>
+    <div style="position:absolute; width:10px; height:10px; background:#ff69b4; border-radius:50%; top:14px; left:7px;"></div>
+    <!-- Center -->
+    <div style="position:absolute; width:10px; height:10px; background:#fcd303; border-radius:50%; top:7px; left:7px;"></div>
+  </div>
+
+  <!-- Sparkles -->
+  <div id="flower-sparkles" style="display:none;">
+    <div style="position:absolute; top:-10px; left:10px; width:6px; height:6px; background:white; border-radius:50%; box-shadow:0 0 6px #fff;"></div>
+    <div style="position:absolute; top:10px; left:-6px; width:4px; height:4px; background:white; border-radius:50%; box-shadow:0 0 4px #fff;"></div>
+    <div style="position:absolute; top:20px; left:16px; width:5px; height:5px; background:white; border-radius:50%; box-shadow:0 0 5px #fff;"></div>
+  </div>
+</div>
+</div>
+
+<script>
+function showChirp(el) {
+  const bubble = el.querySelector('.chirp-bubble');
+  bubble.style.display = 'block';
+  setTimeout(() => { bubble.style.display = 'none'; }, 1500);
+}
+</script>
+<script>
+  const flower = document.getElementById('flower');
+  const sunny = document.querySelector('[style*="duckWalk"]');
+
+  function checkSunnyPosition() {
+    const flowerX = flower.getBoundingClientRect().left;
+    const sunnyX = sunny.getBoundingClientRect().left;
+
+    if (sunnyX + 120 > flowerX && sunnyX < flowerX + 60) {
+      flower.style.transform = "scale(1)";
+    } else {
+      flower.style.transform = "scale(0.5)";
+    }
+
+    requestAnimationFrame(checkSunnyPosition);
+  }
+
+  requestAnimationFrame(checkSunnyPosition);
+</script>
+<script>
+  window.onload = () => {
+    const flower = document.getElementById('flower');
+    const flowerPetals = document.getElementById('flower-petals');
+    const sparkles = document.getElementById('flower-sparkles');
+    const sunny = document.querySelector('[style*="duckWalk"]');
+    const sunnySpeech = document.getElementById('sunnySpeech');
+    const speechText = document.getElementById('speechText');
+
+    if (!flower || !flowerPetals || !sparkles || !sunny || !sunnySpeech || !speechText) {
+      console.error("One or more required elements not found.");
+      return;
+    }
+
+    let wowShown = false;
+
+    function checkSunnyPosition() {
+      const flowerX = flower.getBoundingClientRect().left;
+      const sunnyX = sunny.getBoundingClientRect().left;
+
+      if (sunnyX + 120 > flowerX && sunnyX < flowerX + 80) {
+        flowerPetals.style.transform = "scale(1)";
+        sparkles.style.display = "block";
+
+        if (!wowShown) {
+          wowShown = true;
+          speechText.innerHTML = "<strong>Wow!</strong> What a beautiful flower! 🌼";
+          sunnySpeech.style.display = "block";
+          setTimeout(() => {
+            sunnySpeech.style.display = "none";
+            speechText.innerHTML = "<strong>Hi!</strong> I'm <em>Sunny</em> the Safety Duck 🌈✨";
+          }, 2500);
+        }
+      } else {
+        flowerPetals.style.transform = "scale(0.5)";
+        sparkles.style.display = "none";
+        wowShown = false;
+      }
+
+      requestAnimationFrame(checkSunnyPosition);
+    }
+
+    requestAnimationFrame(checkSunnyPosition);
+  };
+</script>
+</body>
+</html>

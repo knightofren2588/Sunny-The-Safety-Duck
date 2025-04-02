@@ -1,0 +1,98 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+/* BODY AND BACKGROUND */
+h1, h2{
+  text-align: center;
+  color: white;
+  margin-top: 2%;
+}
+
+ul{
+  display: flex;
+  padding: 0;
+  margin: 5%;
+  flex-direction: row;
+  justify-content: center;
+  gap: 55px;
+}
+li {
+  display: flex;
+  height: 150px;
+  list-style: none;
+  flex-basis: 100px;
+  
+}
+body {
+  background-image: url("../img/Background.jpg");
+  background-repeat: no-repeat; /* Prevents repeating */
+  background-size: cover; /* Ensures the image covers the entire background */
+  height: 100vh;
+  
+
+}
+.squirtle-container {
+  text-align: center; /* Center the content */
+  margin: 20px;
+}
+
+.squirtle-image {
+  width: 150px; /* Adjust size as needed */
+  display: block; /* Makes it behave like block for better spacing */
+  margin: 0 auto;
+}
+
+.squirtle-text {
+  font-size: 50px; /* Adjust font size */
+  color:white;
+  font-weight: bold;
+}
+
+.charmander-container {
+  text-align: center; /* Center the content */
+  margin: 20px;
+}
+
+.charmander-image {
+  width: 200px; /* Adjust size as needed */
+  display: block; /* Makes it behave like block for better spacing */
+  margin: 0 auto;
+}
+
+.charmander-text {
+  font-size: 50px; /* Adjust font size */
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.bulbasaur-container {
+  text-align: center; /* Center the content */
+  margin: 20px;
+}
+
+.bulbasaur-image {
+  width: 150px; /* Adjust size as needed */
+  display: block; /* Makes it behave like block for better spacing */
+  margin: 0 auto;
+}
+
+.bulbasaur-text {
+  font-size: 50px; /* Adjust font size */
+  color: white;
+  font-weight: bold;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/

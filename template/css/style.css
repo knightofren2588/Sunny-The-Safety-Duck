@@ -1,0 +1,43 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+main {
+  border: 1px solid black;
+  margin-top: 40%;
+  padding: 10%;
+  text-align: center;
+  background-color: blanchedalmond;
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 5%;
+  font-style: italic;
+  
+}
+
+.userInput {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 5%;
+}
+.btn {
+  width: 25%;
+  background-color: red;
+  border-radius: 10%;
+}
+
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
