@@ -1,0 +1,874 @@
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<style type="text/css">/* Original animations maintained */
+        @keyframes sunnyLookUp {
+            0%, 100% { transform: rotate(0deg); }
+            45% { transform: rotate(-10deg); }
+            55% { transform: rotate(-10deg); }
+        }
+
+        @keyframes butterflyFly {
+            0%   { transform: translateX(110vw) translateY(0); }
+            25%  { transform: translateX(75vw) translateY(-20px); }
+            50%  { transform: translateX(50vw) translateY(20px); }
+            75%  { transform: translateX(25vw) translateY(-20px); }
+            100% { transform: translateX(-10vw) translateY(0); }
+        }
+
+        @keyframes leafFall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            50% { transform: translateY(60px) rotate(25deg); opacity: 0.8; }
+            100% { transform: translateY(120px) rotate(-30deg); opacity: 0; }
+        }
+
+        @keyframes leafFallAlt {
+            0% { transform: translateY(0) rotate(10deg); opacity: 1; }
+            50% { transform: translateY(80px) rotate(-10deg); opacity: 0.7; }
+            100% { transform: translateY(150px) rotate(20deg); opacity: 0; }
+        }
+
+        @keyframes leafFallAlt2 {
+            0% { transform: translateY(0) rotate(-15deg); opacity: 1; }
+            50% { transform: translateY(70px) rotate(15deg); opacity: 0.7; }
+            100% { transform: translateY(140px) rotate(-25deg); opacity: 0; }
+        }
+
+        @keyframes wingFlap {
+            0%, 100% { transform: scaleY(1) rotate(0deg); }
+            50% { transform: scaleY(1.2) rotate(2deg); }
+        }
+
+        @keyframes tailWiggle {
+            0%, 100% { transform: rotate(8deg); }
+            50% { transform: rotate(-8deg); }
+        }
+
+        @keyframes birdFlap {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(30deg); }
+        }
+
+        @keyframes birdFlyRight {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(110vw); }
+        }
+
+        @keyframes birdFlyLeft {
+            0% { transform: translateX(110vw); }
+            100% { transform: translateX(-100px); }
+        }
+
+        @keyframes duckHop {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        @keyframes duckWalk {
+            0% { left: -200px; }
+            100% { left: 100%; }
+        }
+
+        @keyframes sparkleBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+
+        @keyframes waveFlag {
+            0%, 100% { transform: rotateZ(0deg); }
+            50% { transform: rotateZ(2deg); }
+        }
+
+        @keyframes cloudDriftRight {
+            0% { transform: translateX(-200px); }
+            100% { transform: translateX(100vw); }
+        }
+
+        @keyframes cloudDriftLeft {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(-200px); }
+        }
+
+        @keyframes blink {
+            0%, 90%, 100% { height: 5px; }
+            92% { height: 0; }
+            94% { height: 5px; }
+        }
+
+        @keyframes legMove {
+            0%, 100% { transform: rotate(10deg); }
+            50% { transform: rotate(-10deg); }
+        }
+
+        @keyframes badgeSwing {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(6deg); }
+        }
+
+        /* Weather animations */
+        @keyframes rainDrop {
+            0% { transform: translateY(-100px) translateX(0); opacity: 0.7; }
+            100% { transform: translateY(400px) translateX(20px); opacity: 0; }
+        }
+
+        @keyframes snowFall {
+            0% { transform: translateY(-100px) translateX(0) rotate(0deg); opacity: 0.8; }
+            100% { transform: translateY(400px) translateX(-30px) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes windSway {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        @keyframes lightningFlash {
+            0%, 90%, 100% { opacity: 0; }
+            5%, 10% { opacity: 0.8; }
+        }
+
+        @keyframes safetyVestGlow {
+            0%, 100% { box-shadow: 0 0 5px rgba(255, 165, 0, 0.5); }
+            50% { box-shadow: 0 0 15px rgba(255, 165, 0, 0.9); }
+        }
+
+        @keyframes tipBubbleAppear {
+            0% { opacity: 0; transform: translateY(10px) scale(0.8); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+</style>
+<div style="max-width: none; margin: 2rem auto; background: linear-gradient(to bottom, #ffffff, #e6f7ff 40%, #f5faff); border-radius: 1.5rem; padding: 2rem; box-shadow: 0 4px 16px rgba(0,0,0,0.08); font-family: 'Segoe UI', sans-serif;"><!-- Header -->
+<div style="text-align: center; margin-bottom: 2rem;">
+<h2 style="text-align: center; margin-bottom: 0.5rem;"><strong>Meet Sunny the Safety Duck!</strong></h2>
+
+<p style="font-size: 1.1rem; color: #333; margin: 0;">Sunny is here to bring a smile to your day and support our team&#39;s safety and wellness efforts.<br />
+Click around and explore &mdash; more features and interactive check-ins are coming soon!</p>
+<!-- Updated Safety Team Status Bar -->
+
+<div style="margin-top: 1rem; padding: 0.8rem; background: linear-gradient(135deg, #28a745, #20c997); border-radius: 25px; color: white; font-weight: bold; box-shadow: 0 2px 10px rgba(40, 167, 69, 0.3);">Today&#39;s Safety Focus: <span id="dailyFocus">Workplace Wellness</span> | Sunny Says: <span id="sunnySays">&quot;Safety First, Always!&quot;</span> | Team Goal: <span id="teamGoal">Zero Incidents</span></div>
+</div>
+</div>
+<!-- Weather Control Panel -->
+
+<div style="text-align: center; margin-bottom: 1rem; padding: 1rem; background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 15px; border: 2px solid #90caf9;">
+<h3 style="margin: 0 0 0.5rem 0; color: #1565c0; text-align: center;">Change Sunny&#39;s Weather Environment</h3>
+
+<div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;"><button onclick="setWeather('sunny')" style="padding: 8px 16px; background: #ffc107; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; color: #333;">Sunny</button><button onclick="setWeather('rainy')" style="padding: 8px 16px; background: #607d8b; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; color: white;">Rainy</button><button onclick="setWeather('snowy')" style="padding: 8px 16px; background: #90a4ae; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; color: white;">Snowy</button><button onclick="setWeather('stormy')" style="padding: 8px 16px; background: #37474f; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; color: white;">Stormy</button><button onclick="setWeather('autumn')" style="padding: 8px 16px; background: #ff6f00; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; color: white;">Autumn</button><button onclick="setWeather('spring')" style="padding: 8px 16px; background: #4caf50; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; color: white;">Spring</button></div>
+
+<p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; color: #666; font-style: italic;">Click any weather button to see Sunny&#39;s environment transform!</p>
+</div>
+<!-- MAIN WEATHER SCENE -->
+
+<div id="weatherScene" style="position: relative; width: 100%; height: 400px; overflow: hidden; background: radial-gradient(circle at top center, #ffffff 0%, #b3e2ff 30%, #c2f9a7 60%, #a1e887 100%); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 1s ease;"><!-- Weather Effects Container -->
+<div id="weatherEffects" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 8;">&nbsp;</div>
+<!-- Lightning Flash Overlay -->
+
+<div id="lightning" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.9); opacity: 0; z-index: 9; pointer-events: none;">&nbsp;</div>
+<!-- Sun/Moon -->
+
+<div id="celestialBody" onclick="showSafetyTip()" style="position:absolute; top:20px; left:20px; width:60px; height:60px; background:radial-gradient(circle, #fff85e, #fdd835); border-radius:50%; box-shadow:0 0 15px #fdd835; cursor: pointer; transition: all 1s ease;">
+<div id="celestialIcon" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 20px; transition: all 0.5s ease;">SUN</div>
+</div>
+<!-- Clouds -->
+
+<div style="position:absolute; top:40px; left:0; width:80px; height:40px; background:#fff; border-radius:40px; opacity:0.8; animation:cloudDriftRight 60s linear infinite;">
+<div style="position:absolute; width:40px; height:40px; background:#fff; border-radius:50%; left:-20px; top:0;">&nbsp;</div>
+
+<div style="position:absolute; width:50px; height:50px; background:#fff; border-radius:50%; left:30px; top:-10px;">&nbsp;</div>
+</div>
+
+<div style="position:absolute; top:60px; left:0; width:60px; height:30px; background:#fff; border-radius:30px; opacity:0.6; animation:cloudDriftLeft 50s linear infinite;">
+<div style="position:absolute; width:30px; height:30px; background:#fff; border-radius:50%; left:-15px;">&nbsp;</div>
+
+<div style="position:absolute; width:40px; height:40px; background:#fff; border-radius:50%; left:20px; top:-10px;">&nbsp;</div>
+</div>
+<!-- Enhanced Tree -->
+
+<div style="position:absolute; bottom:16px; left:70%; z-index:1;">
+<div style="width:14px; height:45px; background: linear-gradient(90deg, #8B5E3C, #A0522D, #8B5E3C); border-radius:3px; position: relative;">
+<div style="position: absolute; top: 5px; left: 2px; width: 10px; height: 2px; background: #654321; border-radius: 1px;">&nbsp;</div>
+
+<div style="position: absolute; top: 15px; left: 3px; width: 8px; height: 1px; background: #654321; border-radius: 1px;">&nbsp;</div>
+
+<div style="position: absolute; top: 25px; left: 1px; width: 12px; height: 2px; background: #654321; border-radius: 1px;">&nbsp;</div>
+
+<div style="position: absolute; top: 35px; left: 2px; width: 9px; height: 1px; background: #654321; border-radius: 1px;">&nbsp;</div>
+</div>
+
+<div style="position:absolute; bottom:35px; left:-25px; width:70px; height:70px; background: radial-gradient(circle, #6ed16e, #5cb85c); border-radius:50%; box-shadow: -25px 5px #5cb85c, 25px 5px #5cb85c, 0 -25px #6ed16e;">&nbsp;</div>
+
+<div style="position:absolute; bottom:45px; left:-15px; width:50px; height:50px; background: radial-gradient(circle, #7dd87d, #6ed16e); border-radius:50%; opacity: 0.8;">&nbsp;</div>
+
+<div style="position:absolute; bottom:40px; left:-20px; width:60px; height:60px; background: radial-gradient(circle, #5cb85c, #4caf50); border-radius:50%; opacity: 0.6;">&nbsp;</div>
+
+<div style="position:absolute; width:14px; height:16px; background: linear-gradient(135deg, #ff6b35, #f7931e); border-radius:50% 0 50% 50%; animation:leafFall 6s ease-in-out infinite; left:-12px; top:0; transform: rotate(45deg);">&nbsp;</div>
+
+<div style="position:absolute; width:12px; height:14px; background: linear-gradient(135deg, #ff8c42, #ff7518); border-radius:50% 0 50% 50%; animation:leafFallAlt 8s ease-in-out infinite; left:22px; top:0; transform: rotate(-30deg);">&nbsp;</div>
+
+<div style="position:absolute; width:10px; height:12px; background: linear-gradient(135deg, #ffad42, #ff8f00); border-radius:50% 0 50% 50%; animation:leafFallAlt2 10s ease-in-out infinite; left:5px; top:0; transform: rotate(60deg);">&nbsp;</div>
+
+<div style="position:absolute; width:13px; height:15px; background: linear-gradient(135deg, #d32f2f, #b71c1c); border-radius:50% 0 50% 50%; animation:leafFall 7s ease-in-out infinite; left:15px; top:-5px; transform: rotate(20deg);">&nbsp;</div>
+
+<div style="position: absolute; bottom: 35px; left: -5px; width: 12px; height: 2px; background: #8B5E3C; border-radius: 1px; transform: rotate(-25deg);">&nbsp;</div>
+
+<div style="position: absolute; bottom: 42px; right: -8px; width: 15px; height: 2px; background: #8B5E3C; border-radius: 1px; transform: rotate(30deg);">&nbsp;</div>
+
+<div style="position: absolute; bottom: 50px; left: 2px; width: 10px; height: 2px; background: #8B5E3C; border-radius: 1px; transform: rotate(-45deg);">&nbsp;</div>
+</div>
+<!-- Bird Feeder (replacing Safety Equipment Station) -->
+
+<div style="position: absolute; bottom: 20px; right: 15%; z-index: 2;"><!-- Pole -->
+<div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 8px; height: 60px; background: linear-gradient(90deg, #8B4513, #A0522D, #8B4513); border-radius: 4px;">&nbsp;</div>
+<!-- Feeder House -->
+
+<div style="position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); width: 60px; height: 40px; background: #DEB887; border: 3px solid #8B4513; border-radius: 5px;"><!-- Seed opening -->
+<div style="position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%); width: 30px; height: 15px; background: #333; border-radius: 5px;">&nbsp;</div>
+</div>
+<!-- Roof -->
+
+<div style="position: absolute; bottom: 95px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 40px solid transparent; border-right: 40px solid transparent; border-bottom: 25px solid #8B4513;">&nbsp;</div>
+<!-- Perch -->
+
+<div style="position: absolute; bottom: 58px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: #8B4513; border-radius: 2px;">&nbsp;</div>
+</div>
+<!-- Rainbow path -->
+
+<div style="position:absolute; bottom:0; width:100%; height:16px; background:linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); z-index:0;">&nbsp;</div>
+<!-- Grass Layer with Embedded Flower -->
+
+<div style="position:absolute; bottom:0; width:100%; height:30px; background:repeating-linear-gradient(-45deg, #7ac95f, #7ac95f 4px, #69b24e 4px, #69b24e 8px); z-index:1; border-top-left-radius:8px; border-top-right-radius:8px; box-shadow:inset 0 3px 6px rgba(0,0,0,0.1);"><!-- FLOWER EMBEDDED IN GRASS LAYER -->
+<div id="flower" style="position:absolute; bottom:30px; left:60%; width:20px; height:35px; z-index:2;"><!-- Simple stem growing from grass -->
+<div style="width:2px; height:20px; background:#4caf50; position:absolute; left:9px; bottom:0;">&nbsp;</div>
+<!-- Flower head -->
+
+<div id="flower-petals" style="position:absolute; bottom:15px; left:2px; width:16px; height:16px; transform:scale(0.8); transition:transform 0.5s ease;"><!-- 4 pink petals in cross pattern -->
+<div style="position:absolute; width:8px; height:8px; background:#ff69b4; border-radius:50%; top:0; left:4px;">&nbsp;</div>
+
+<div style="position:absolute; width:8px; height:8px; background:#ff69b4; border-radius:50%; top:4px; left:0;">&nbsp;</div>
+
+<div style="position:absolute; width:8px; height:8px; background:#ff69b4; border-radius:50%; top:4px; left:8px;">&nbsp;</div>
+
+<div style="position:absolute; width:8px; height:8px; background:#ff69b4; border-radius:50%; top:8px; left:4px;">&nbsp;</div>
+<!-- Yellow center -->
+
+<div style="position:absolute; width:6px; height:6px; background:#ffd54f; border-radius:50%; top:5px; left:5px;">&nbsp;</div>
+</div>
+<!-- Sparkles when blooming -->
+
+<div id="flower-sparkles" style="display:none; position:absolute; bottom:20px; left:0; width:20px; height:20px;">
+<div style="position:absolute; top:0; left:8px; width:3px; height:3px; background:white; border-radius:50%; animation: sparkleBounce 1.5s infinite;">&nbsp;</div>
+
+<div style="position:absolute; top:8px; left:0; width:2px; height:2px; background:#ffeb3b; border-radius:50%; animation: sparkleBounce 1.8s infinite;">&nbsp;</div>
+
+<div style="position:absolute; top:8px; right:0; width:3px; height:3px; background:#ff4081; border-radius:50%; animation: sparkleBounce 2.1s infinite;">&nbsp;</div>
+</div>
+<!-- Mood emoji -->
+
+<div id="flower-mood" style="position:absolute; bottom:40px; left:6px; font-size:12px; opacity:0; transition:opacity 0.3s ease;">:)</div>
+</div>
+</div>
+<!-- SUNNY THE SAFETY DUCK -->
+
+<div onclick="showSunnyMessage()" style="position:absolute; bottom:0; left:-200px; width:200px; height:180px; animation:duckWalk 35s linear infinite, duckHop 1.5s ease-in-out infinite; z-index:2; cursor:pointer;"><!-- Speech Bubble -->
+<div class="speech" id="sunnySpeech" style="display:none; position:absolute; bottom:180px; left:60px; background:#ffffff; padding:12px 16px; border-radius:15px; font-size:14px; font-family:sans-serif; box-shadow:0 6px 12px rgba(0,0,0,0.2); max-width:200px; z-index:6; border: 2px solid #ffc107;"><span id="speechText"><strong>Hi!</strong> I&#39;m <em>Sunny</em> the Safety Duck!</span>
+
+<div style="position: absolute; bottom: -8px; left: 20px; width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 8px solid #ffc107;">&nbsp;</div>
+</div>
+<!-- Safety Hat -->
+
+<div style="width:55px; height:20px; background:linear-gradient(135deg, #ffc107, #ffeb3b); border:2px solid #d4a900; border-radius:12px 12px 0 0; position:absolute; bottom:140px; left:110px; font-family:sans-serif; font-size:8px; font-weight:bold; color:#333; display:flex; align-items:center; justify-content:center; z-index:6;">SAFETY</div>
+<!-- Head -->
+
+<div style="position:absolute; bottom:110px; left:120px; width:35px; height:35px; background:radial-gradient(circle, #fff85e, #fdd835); border-radius:50%; z-index:5; transform-origin:center; animation:sunnyLookUp 20s linear infinite; border: 1px solid #f57c00;">
+<div style="width:6px; height:6px; background:black; border-radius:50%; position:absolute; top:8px; right:10px; animation:blink 4s infinite;">&nbsp;</div>
+
+<div style="width:6px; height:6px; background:black; border-radius:50%; position:absolute; top:8px; right:18px; animation:blink 4s infinite;">&nbsp;</div>
+
+<div style="width:14px; height:8px; background:linear-gradient(135deg, #ff8c00, #ffa500); border-radius:4px; position:absolute; top:15px; right:-12px; border: 1px solid #e67e00;">&nbsp;</div>
+
+<div style="position:absolute; width:12px; height:8px; border-bottom:2px solid #d2691e; border-radius:50%; top:18px; left:18px;">&nbsp;</div>
+</div>
+<!-- Neck -->
+
+<div style="position:absolute; bottom:80px; left:125px; width:22px; height:32px; background:radial-gradient(ellipse, #fff85e, #fdd835); border-radius:50%;">&nbsp;</div>
+<!-- Body with Safety Vest Effect -->
+
+<div style="position:absolute; bottom:30px; left:75px; width:95px; height:55px; background:radial-gradient(ellipse, #fff85e, #fdd835); border-radius:50%; border: 1px solid #f57c00;"><!-- Safety Badge -->
+<div style="position: absolute; top: 22px; left: 65px; width: 28px; height: 16px; animation: badgeSwing 2s ease-in-out infinite; transform-origin: top center; pointer-events: none;">
+<div style="width: 2px; height: 8px; background: #8884d8; margin: 0 auto;">&nbsp;</div>
+<img alt="Sunny's Badge" src="https://missioncentral.equitashealth.com/Graphics/editor/MikeButcher2212/2023-EH-symbol2.png" style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid #ccc; background: white; box-shadow: 0 3px 6px rgba(0,0,0,0.2); display: block; margin: 0 auto;" /></div>
+<!-- Safety Vest Reflective Strips -->
+
+<div style="position: absolute; top: 15px; left: 10px; width: 75px; height: 3px; background: repeating-linear-gradient(90deg, #ffff00, #ffff00 8px, transparent 8px, transparent 12px); opacity: 0.8;">&nbsp;</div>
+
+<div style="position: absolute; top: 35px; left: 10px; width: 75px; height: 3px; background: repeating-linear-gradient(90deg, #ffff00, #ffff00 8px, transparent 8px, transparent 12px); opacity: 0.8;">&nbsp;</div>
+<!-- Belly Spot -->
+
+<div style="width:35px; height:25px; background:radial-gradient(ellipse, #ffd700, #ffed4e); border-radius:50%; position:absolute; bottom:8px; left:30px; border: 1px solid #daa520;">&nbsp;</div>
+</div>
+<!-- Tail -->
+
+<div style="position:absolute; bottom:60px; left:68px; transform-origin:left center; transform:rotate(20deg); animation:tailWiggle 0.8s infinite; z-index:4;">
+<div style="position:absolute; width:14px; height:8px; background:linear-gradient(135deg, #fff46e, #fffaa3); border-radius:50% 50% 50% 0; transform:rotate(-20deg); left:0; top:0; border: 1px solid #f57c00;">&nbsp;</div>
+
+<div style="position:absolute; width:16px; height:10px; background:linear-gradient(135deg, #fff46e, #fffaa3); border-radius:50% 50% 50% 0; transform:rotate(0deg); left:4px; top:1px; border: 1px solid #f57c00;">&nbsp;</div>
+
+<div style="position:absolute; width:14px; height:8px; background:linear-gradient(135deg, #fff46e, #fffaa3); border-radius:50% 50% 50% 0; transform:rotate(20deg); left:9px; top:2px; border: 1px solid #f57c00;">&nbsp;</div>
+</div>
+<!-- Legs -->
+
+<div style="width:7px; height:22px; background:linear-gradient(180deg, #ff8c00, #ffa500); border-radius:4px; position:absolute; bottom:8px; left:105px; transform-origin:top center; animation:legMove 0.8s infinite; border: 1px solid #e67e00;">&nbsp;</div>
+
+<div style="width:14px; height:8px; background:linear-gradient(135deg, #ff8c00, #ffa500); border-radius:50%; position:absolute; bottom:4px; left:98px; border: 1px solid #e67e00;">&nbsp;</div>
+
+<div style="width:7px; height:22px; background:linear-gradient(180deg, #ff8c00, #ffa500); border-radius:4px; position:absolute; bottom:8px; left:120px; transform-origin:top center; animation:legMove 0.8s infinite reverse; border: 1px solid #e67e00;">&nbsp;</div>
+
+<div style="width:14px; height:8px; background:linear-gradient(135deg, #ff8c00, #ffa500); border-radius:50%; position:absolute; bottom:4px; left:113px; border: 1px solid #e67e00;">&nbsp;</div>
+<!-- Rainbow Sparkles -->
+
+<div style="width:10px; height:10px; background:radial-gradient(circle, red, darkred); border-radius:50%; position:absolute; bottom:2px; left:10px; animation:sparkleBounce 2s infinite; box-shadow: 0 0 8px red;">&nbsp;</div>
+
+<div style="width:10px; height:10px; background:radial-gradient(circle, orange, darkorange); border-radius:50%; position:absolute; bottom:2px; left:30px; animation:sparkleBounce 2.2s infinite; box-shadow: 0 0 8px orange;">&nbsp;</div>
+
+<div style="width:10px; height:10px; background:radial-gradient(circle, yellow, gold); border-radius:50%; position:absolute; bottom:2px; left:50px; animation:sparkleBounce 2.4s infinite; box-shadow: 0 0 8px yellow;">&nbsp;</div>
+
+<div style="width:10px; height:10px; background:radial-gradient(circle, green, darkgreen); border-radius:50%; position:absolute; bottom:2px; left:70px; animation:sparkleBounce 2.6s infinite; box-shadow: 0 0 8px green;">&nbsp;</div>
+
+<div style="width:10px; height:10px; background:radial-gradient(circle, blue, darkblue); border-radius:50%; position:absolute; bottom:2px; left:90px; animation:sparkleBounce 2.8s infinite; box-shadow: 0 0 8px blue;">&nbsp;</div>
+
+<div style="width:10px; height:10px; background:radial-gradient(circle, violet, purple); border-radius:50%; position:absolute; bottom:2px; left:110px; animation:sparkleBounce 3s infinite; box-shadow: 0 0 8px violet;">&nbsp;</div>
+</div>
+<!-- Rainbow Birds -->
+
+<div onclick="showChirp(this)" style="position:absolute; top:30px; left:-100px; animation:birdFlyRight 45s linear infinite; cursor:pointer;">
+<div style="position: relative; width: 40px; height: 20px;">
+<div style="position:absolute; top:-6px; left:5px; width:20px; height:10px; background:linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); border-radius:50%; transform-origin:bottom center; animation:birdFlap 0.5s ease-in-out infinite;">&nbsp;</div>
+
+<div style="width:30px; height:16px; background:linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); border-radius:50%; position:absolute; top:4px;">&nbsp;</div>
+
+<div style="width:12px; height:12px; background:#fff; border-radius:50%; position:absolute; top:2px; left:20px;">&nbsp;</div>
+
+<div style="width:4px; height:4px; background:black; border-radius:50%; position:absolute; top:5px; left:25px;">&nbsp;</div>
+
+<div style="width:0; height:0; border-left:5px solid orange; border-top:3px solid transparent; border-bottom:3px solid transparent; position:absolute; top:6px; left:31px;">&nbsp;</div>
+
+<div class="chirp-bubble" style="display:none; position:absolute; bottom:20px; left:-5px; background:white; padding:4px 8px; border-radius:10px; font-size:10px; font-family:sans-serif; box-shadow:0 2px 6px rgba(0,0,0,0.2);">chirp!</div>
+</div>
+</div>
+
+<div onclick="showChirp(this)" style="position:absolute; top:150px; left:-100px; animation:birdFlyRight 65s linear infinite; cursor:pointer;">
+<div style="position: relative; width: 40px; height: 20px;">
+<div style="position:absolute; top:-6px; left:5px; width:20px; height:10px; background:linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); border-radius:50%; transform-origin:bottom center; animation:birdFlap 0.5s ease-in-out infinite;">&nbsp;</div>
+
+<div style="width:30px; height:16px; background:linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); border-radius:50%; position:absolute; top:4px;">&nbsp;</div>
+
+<div style="width:12px; height:12px; background:#fff; border-radius:50%; position:absolute; top:2px; left:20px;">&nbsp;</div>
+
+<div style="width:4px; height:4px; background:black; border-radius:50%; position:absolute; top:5px; left:25px;">&nbsp;</div>
+
+<div style="width:0; height:0; border-left:5px solid orange; border-top:3px solid transparent; border-bottom:3px solid transparent; position:absolute; top:6px; left:31px;">&nbsp;</div>
+
+<div class="chirp-bubble" style="display:none; position:absolute; bottom:20px; left:-5px; background:white; padding:4px 8px; border-radius:10px; font-size:10px; font-family:sans-serif; box-shadow:0 2px 6px rgba(0,0,0,0.2);">chirp!</div>
+</div>
+</div>
+<!-- Red Butterfly -->
+
+<div style="position:absolute; top:60px; left:-50px; animation:butterflyFly 35s linear infinite; z-index:3;">
+<div style="position:relative; width:40px; height:30px;">
+<div style="position:absolute; width:20px; height:20px; background:radial-gradient(circle, #e63946, #d62839); border-radius:50% 60% 60% 50%; transform:rotate(-30deg); left:0; top:0; animation:wingFlap 1s ease-in-out infinite; border: 1px solid #c21e29;">&nbsp;</div>
+
+<div style="position:absolute; width:20px; height:20px; background:radial-gradient(circle, #e63946, #d62839); border-radius:60% 50% 50% 60%; transform:rotate(30deg); left:20px; top:0; animation:wingFlap 1s ease-in-out infinite reverse; border: 1px solid #c21e29;">&nbsp;</div>
+
+<div style="position:absolute; width:4px; height:22px; background:#222; border-radius:2px; left:18px; top:4px;">&nbsp;</div>
+
+<div style="position:absolute; width:2px; height:10px; background:#222; border-radius:2px; left:17px; top:-8px; transform:rotate(-20deg);">&nbsp;</div>
+
+<div style="position:absolute; width:2px; height:10px; background:#222; border-radius:2px; left:21px; top:-8px; transform:rotate(20deg);">&nbsp;</div>
+</div>
+</div>
+<!-- Second Tree (Behind Flag) -->
+
+<div style="position:absolute; bottom:16px; left:8%; z-index:0;"><!-- Trunk with texture -->
+<div style="width:12px; height:38px; background: linear-gradient(90deg, #6d4c41, #8d6e63, #6d4c41); border-radius:2px; position: relative;"><!-- Tree bark texture lines -->
+<div style="position: absolute; top: 4px; left: 1px; width: 10px; height: 1px; background: #5d4037; border-radius: 1px;">&nbsp;</div>
+
+<div style="position: absolute; top: 12px; left: 2px; width: 8px; height: 2px; background: #5d4037; border-radius: 1px;">&nbsp;</div>
+
+<div style="position: absolute; top: 22px; left: 1px; width: 9px; height: 1px; background: #5d4037; border-radius: 1px;">&nbsp;</div>
+
+<div style="position: absolute; top: 30px; left: 2px; width: 7px; height: 1px; background: #5d4037; border-radius: 1px;">&nbsp;</div>
+</div>
+<!-- Multi-layered Canopy (slightly smaller than main tree) -->
+
+<div style="position:absolute; bottom:30px; left:-20px; width:60px; height:60px; background: radial-gradient(circle, #81c784, #66bb6a); border-radius:50%; box-shadow: -20px 3px #66bb6a, 20px 3px #66bb6a, 0 -20px #81c784;">&nbsp;</div>
+<!-- Additional canopy layers for depth -->
+
+<div style="position:absolute; bottom:38px; left:-12px; width:45px; height:45px; background: radial-gradient(circle, #a5d6a7, #81c784); border-radius:50%; opacity: 0.8;">&nbsp;</div>
+
+<div style="position:absolute; bottom:35px; left:-16px; width:55px; height:55px; background: radial-gradient(circle, #66bb6a, #4caf50); border-radius:50%; opacity: 0.6;">&nbsp;</div>
+<!-- Falling leaves with different colors -->
+
+<div style="position:absolute; width:11px; height:13px; background: linear-gradient(135deg, #ff7043, #ff5722); border-radius:50% 0 50% 50%; animation:leafFall 7s ease-in-out infinite; left:-8px; top:0; transform: rotate(30deg);">&nbsp;</div>
+
+<div style="position:absolute; width:10px; height:12px; background: linear-gradient(135deg, #ffa726, #ff9800); border-radius:50% 0 50% 50%; animation:leafFallAlt 9s ease-in-out infinite; left:18px; top:0; transform: rotate(-45deg);">&nbsp;</div>
+
+<div style="position:absolute; width:12px; height:14px; background: linear-gradient(135deg, #ffb74d, #ffa000); border-radius:50% 0 50% 50%; animation:leafFallAlt2 8s ease-in-out infinite; left:4px; top:0; transform: rotate(15deg);">&nbsp;</div>
+<!-- Small branches -->
+
+<div style="position: absolute; bottom: 32px; left: -4px; width: 10px; height: 2px; background: #6d4c41; border-radius: 1px; transform: rotate(-20deg);">&nbsp;</div>
+
+<div style="position: absolute; bottom: 38px; right: -6px; width: 12px; height: 2px; background: #6d4c41; border-radius: 1px; transform: rotate(25deg);">&nbsp;</div>
+
+<div style="position: absolute; bottom: 45px; left: 1px; width: 8px; height: 1px; background: #6d4c41; border-radius: 1px; transform: rotate(-40deg);">&nbsp;</div>
+</div>
+<!-- Flag Pole and Pride Flag -->
+
+<div style="position:absolute; bottom:16px; left:12%; z-index:1;">
+<div style="width:3px; height:110px; background:#333; position:absolute; left:0; bottom:0;">&nbsp;</div>
+
+<div style="width:80px; height:48px; position:absolute; left:4px; bottom:60px; border-radius:4px; overflow:hidden; animation:waveFlag 3s ease-in-out infinite; transform-origin:left center; box-shadow:0 2px 6px rgba(0,0,0,0.3);">
+<div style="position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(to bottom, #e40303 0%, #e40303 14.28%, #ff8c00 14.28%, #ff8c00 28.56%, #ffed00 28.56%, #ffed00 42.84%, #008026 42.84%, #008026 57.12%, #004dff 57.12%, #004dff 71.4%, #750787 71.4%, #750787 85.68%, #522e91 85.68%, #522e91 100%); z-index:0;">&nbsp;</div>
+<svg height="100%" preserveaspectratio="none" style="position:absolute; top:0; left:0;" viewbox="0 0 120 72" width="100%"> <polygon fill="#FFD800" points="0,0 36,36 0,72"></polygon> <polygon fill="white" points="0,0 36,36 0,72 4,72 40,36 4,0"></polygon> <polygon fill="#f7a8b8" points="4,0 40,36 4,72 8,72 44,36 8,0"></polygon> <polygon fill="#5bcffa" points="8,0 44,36 8,72 12,72 48,36 12,0"></polygon> <polygon fill="#613915" points="12,0 48,36 12,72 16,72 52,36 16,0"></polygon> <polygon fill="black" points="16,0 52,36 16,72 20,72 56,36 20,0"></polygon> <circle cx="14" cy="36" fill="none" r="6" stroke="#660099" stroke-width="2"></circle> </svg></div>
+</div>
+<!-- Safety Tip Bubble -->
+
+<div id="safetyTipBubble" style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:linear-gradient(135deg, #ffffff, #f8f9fa); padding:20px; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.2); border:3px solid #ffc107; max-width:300px; z-index:10; animation:tipBubbleAppear 0.5s ease;">
+<div style="text-align:center; font-weight:bold; color:#d63384; margin-bottom:10px; font-size:16px;">Sunny&#39;s Safety Tip!</div>
+
+<div id="safetyTipText" style="text-align:center; color:#333; font-size:14px; line-height:1.4;">&nbsp;</div>
+<button onclick="closeSafetyTip()" style="margin-top:15px; width:100%; padding:8px; background:#28a745; color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold;">Got it, thanks Sunny!</button></div>
+</div>
+<!-- END OF WEATHER SCENE --><!-- What's Coming Next Section -->
+
+<div style="margin-top: 3rem; background: linear-gradient(135deg, #f1f8ff, #e3f2fd); border-radius: 1rem; padding: 2rem; border: 2px solid #bbdefb;">
+<h3 style="text-align: center; margin-bottom: 1.5rem; color: #1565c0;"><strong>What&#39;s Coming Next for Our Safety Team?</strong></h3>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+<div style="background: #e8f5e8; padding: 1rem; border-radius: 10px; border-left: 4px solid #28a745;">
+<h4 style="color: #155724; margin: 0 0 0.5rem 0;">Live Now</h4>
+
+<ul style="margin: 0; padding-left: 1rem; color: #155724;">
+	<li>Sunny introduces himself when clicked</li>
+	<li>Interactive weather system with 6 environments</li>
+	<li>Safety team status dashboard</li>
+	<li>Enhanced visual design with safety themes</li>
+</ul>
+</div>
+
+<div style="background: #fff3cd; padding: 1rem; border-radius: 10px; border-left: 4px solid #ffc107;">
+<h4 style="color: #856404; margin: 0 0 0.5rem 0;">In Development</h4>
+
+<ul style="margin: 0; padding-left: 1rem; color: #856404;">
+	<li>Weekly safety tip rotation</li>
+	<li>Team safety milestone celebrations</li>
+	<li>Interactive safety training modules</li>
+	<li>Monthly safety champion spotlights</li>
+</ul>
+</div>
+
+<div style="background: #d1ecf1; padding: 1rem; border-radius: 10px; border-left: 4px solid #17a2b8;">
+<h4 style="color: #0c5460; margin: 0 0 0.5rem 0;">Future Vision</h4>
+
+<ul style="margin: 0; padding-left: 1rem; color: #0c5460;">
+	<li>Safety incident reporting integration</li>
+	<li>Wellness check-in system</li>
+	<li>Team safety challenges and rewards</li>
+	<li>Real-time safety alerts and updates</li>
+</ul>
+</div>
+</div>
+
+<div style="text-align: center; background: #f8f9fa; padding: 1rem; border-radius: 10px; border: 1px solid #dee2e6;">
+<p style="font-style: italic; font-size: 0.95rem; color: #6c757d; margin: 0;"><strong>Have ideas for Sunny?</strong> Our safety team is always looking for ways to improve!<br />
+Reach out with suggestions for new features, safety tips, or interactive elements.</p>
+</div>
+</div>
+<script>
+        // Safety tips and messages
+        const safetyTips = [
+            "Remember to wear your PPE - it's your best friend at work!",
+            "Take regular breaks to avoid fatigue and stay alert!",
+            "Keep walkways clear - a tidy workspace is a safe workspace!",
+            "Report near-misses - they help us prevent actual incidents!",
+            "Stay hydrated throughout your shift - your body will thank you!",
+            "Use proper lifting techniques - your back is irreplaceable!",
+            "Know your emergency exits and procedures - preparation saves lives!",
+            "Communicate hazards to your team - safety is everyone's responsibility!"
+        ];
+
+        const sunnyMessages = [
+            "Hi there! I'm Sunny, your friendly safety reminder!",
+            "Safety first, fun second - but we can have both!",
+            "You're doing great! Keep up those safe work practices!",
+            "Remember: if you see something unsafe, speak up!",
+            "Every day without incidents is a victory for our team!",
+            "Your safety matters to me and everyone here!"
+        ];
+
+        const weatherMessages = {
+            sunny: "What a beautiful sunny day! Perfect weather for safe work!",
+            rainy: "Remember to be extra careful on wet surfaces! Safety first!",
+            snowy: "Winter weather means extra caution - watch your step!",
+            stormy: "When storms come, we stick together and stay safe!",
+            autumn: "Autumn leaves are beautiful, but watch for slippery walkways!",
+            spring: "Spring brings new growth - and renewed focus on safety!"
+        };
+
+        let currentTipIndex = 0;
+        let currentMessageIndex = 0;
+        let currentWeather = 'sunny';
+
+        // Enhanced flower personality system
+        const flowerMoods = {
+            happy: ':)',
+            excited: ':D', 
+            sleepy: 'zzz',
+            surprised: ':o',
+            love: '<3',
+            dancing: '~'
+        };
+
+        const flowerPersonality = {
+            currentMood: 'happy',
+            interactionCount: 0,
+            lastInteraction: Date.now()
+        };
+
+        // Enhanced flower personality functions
+        function updateFlowerMood(mood) {
+            const flowerMoodElement = document.getElementById('flower-mood');
+            if (flowerMoodElement && flowerMoods[mood]) {
+                flowerPersonality.currentMood = mood;
+                flowerMoodElement.textContent = flowerMoods[mood];
+                flowerMoodElement.style.opacity = '1';
+                
+                // Hide mood after 3 seconds
+                setTimeout(() => {
+                    flowerMoodElement.style.opacity = '0';
+                }, 3000);
+            }
+        }
+
+        function flowerInteraction() {
+            flowerPersonality.interactionCount++;
+            flowerPersonality.lastInteraction = Date.now();
+            
+            // Different moods based on interaction count
+            if (flowerPersonality.interactionCount === 1) {
+                updateFlowerMood('surprised');
+            } else if (flowerPersonality.interactionCount <= 3) {
+                updateFlowerMood('happy');
+            } else if (flowerPersonality.interactionCount <= 6) {
+                updateFlowerMood('excited');
+            } else {
+                updateFlowerMood('love');
+            }
+            
+            // Add sparkle effect
+            const flower = document.getElementById('flower-petals');
+            if (flower) {
+                flower.style.filter = 'brightness(1.3) saturate(1.2)';
+                setTimeout(() => {
+                    flower.style.filter = '';
+                }, 500);
+            }
+        }
+
+        // Flower mood cycling when idle
+        function updateFlowerIdleMood() {
+            const timeSinceLastInteraction = Date.now() - flowerPersonality.lastInteraction;
+            
+            if (timeSinceLastInteraction > 30000) { // 30 seconds of no interaction
+                const idleMoods = ['sleepy', 'happy', 'dancing'];
+                const randomMood = idleMoods[Math.floor(Math.random() * idleMoods.length)];
+                updateFlowerMood(randomMood);
+            }
+        }
+
+        // Weather system functions
+        function setWeather(weatherType) {
+            console.log('Setting weather to:', weatherType);
+            
+            const scene = document.getElementById('weatherScene');
+            if (!scene) {
+                console.error('Weather scene element not found!');
+                return;
+            }
+
+            const celestialBody = document.getElementById('celestialBody');
+            const celestialIcon = document.getElementById('celestialIcon');
+            const weatherEffects = document.getElementById('weatherEffects');
+            const lightning = document.getElementById('lightning');
+
+            // Clear existing weather effects
+            if (weatherEffects) {
+                weatherEffects.innerHTML = '';
+            }
+            if (lightning) {
+                lightning.style.animation = '';
+            }
+
+            // Update scene background
+            switch(weatherType) {
+                case 'sunny':
+                    scene.style.background = 'radial-gradient(circle at top center, #ffffff 0%, #b3e2ff 30%, #c2f9a7 60%, #a1e887 100%)';
+                    if (celestialBody) {
+                        celestialBody.style.background = 'radial-gradient(circle, #fff85e, #fdd835)';
+                        celestialBody.style.boxShadow = '0 0 15px #fdd835';
+                    }
+                    if (celestialIcon) celestialIcon.textContent = 'SUN';
+                    break;
+
+                case 'rainy':
+                    scene.style.background = 'radial-gradient(circle at top center, #607d8b 0%, #78909c 30%, #90a4ae 60%, #b0bec5 100%)';
+                    if (celestialBody) {
+                        celestialBody.style.background = 'radial-gradient(circle, #90a4ae, #607d8b)';
+                        celestialBody.style.boxShadow = '0 0 10px #607d8b';
+                    }
+                    if (celestialIcon) celestialIcon.textContent = 'CLOUD';
+                    createRain();
+                    break;
+
+                case 'snowy':
+                    scene.style.background = 'radial-gradient(circle at top center, #eceff1 0%, #cfd8dc 30%, #b0bec5 60%, #90a4ae 100%)';
+                    if (celestialBody) {
+                        celestialBody.style.background = 'radial-gradient(circle, #e8eaf6, #c5cae9)';
+                        celestialBody.style.boxShadow = '0 0 10px #c5cae9';
+                    }
+                    if (celestialIcon) celestialIcon.textContent = 'SNOW';
+                    createSnow();
+                    break;
+
+                case 'stormy':
+                    scene.style.background = 'radial-gradient(circle at top center, #263238 0%, #37474f 30%, #455a64 60%, #546e7a 100%)';
+                    if (celestialBody) {
+                        celestialBody.style.background = 'radial-gradient(circle, #424242, #212121)';
+                        celestialBody.style.boxShadow = '0 0 15px #212121';
+                    }
+                    if (celestialIcon) celestialIcon.textContent = 'STORM';
+                    createStorm();
+                    break;
+
+                case 'autumn':
+                    scene.style.background = 'radial-gradient(circle at top center, #fff3e0 0%, #ffcc80 30%, #ffb74d 60%, #ff9800 100%)';
+                    if (celestialBody) {
+                        celestialBody.style.background = 'radial-gradient(circle, #ffb74d, #ff9800)';
+                        celestialBody.style.boxShadow = '0 0 12px #ff9800';
+                    }
+                    if (celestialIcon) celestialIcon.textContent = 'LEAF';
+                    break;
+
+                case 'spring':
+                    scene.style.background = 'radial-gradient(circle at top center, #f1f8e9 0%, #c8e6c9 30%, #a5d6a7 60%, #81c784 100%)';
+                    if (celestialBody) {
+                        celestialBody.style.background = 'radial-gradient(circle, #aed581, #8bc34a)';
+                        celestialBody.style.boxShadow = '0 0 12px #8bc34a';
+                    }
+                    if (celestialIcon) celestialIcon.textContent = 'BLOOM';
+                    createSpringEffects();
+                    break;
+            }
+
+            showWeatherMessage(weatherMessages[weatherType]);
+            console.log('Weather set successfully to:', weatherType);
+        }
+
+        function createRain() {
+            const weatherEffects = document.getElementById('weatherEffects');
+            if (!weatherEffects) return;
+            
+            for(let i = 0; i < 50; i++) {
+                const rainDrop = document.createElement('div');
+                rainDrop.style.position = 'absolute';
+                rainDrop.style.width = '2px';
+                rainDrop.style.height = '15px';
+                rainDrop.style.background = 'linear-gradient(180deg, rgba(173,216,230,0.8), rgba(135,206,235,0.6))';
+                rainDrop.style.borderRadius = '1px';
+                rainDrop.style.left = Math.random() * 100 + '%';
+                const duration = (Math.random() * 1 + 0.5) + 's';
+                const delay = Math.random() * 2 + 's';
+                rainDrop.style.animation = `rainDrop ${duration} linear infinite`;
+                rainDrop.style.animationDelay = delay;
+                weatherEffects.appendChild(rainDrop);
+            }
+        }
+
+        function createSnow() {
+            const weatherEffects = document.getElementById('weatherEffects');
+            if (!weatherEffects) return;
+            
+            for(let i = 0; i < 30; i++) {
+                const snowFlake = document.createElement('div');
+                snowFlake.style.position = 'absolute';
+                snowFlake.style.width = '8px';
+                snowFlake.style.height = '8px';
+                snowFlake.style.background = 'white';
+                snowFlake.style.borderRadius = '50%';
+                snowFlake.style.left = Math.random() * 100 + '%';
+                const duration = (Math.random() * 3 + 2) + 's';
+                const delay = Math.random() * 3 + 's';
+                snowFlake.style.animation = `snowFall ${duration} linear infinite`;
+                snowFlake.style.animationDelay = delay;
+                snowFlake.style.boxShadow = '0 0 3px rgba(255,255,255,0.8)';
+                weatherEffects.appendChild(snowFlake);
+            }
+        }
+
+        function createStorm() {
+            const lightning = document.getElementById('lightning');
+            if (lightning) {
+                lightning.style.animation = 'lightningFlash 3s infinite';
+            }
+            createRain();
+        }
+
+        function createSpringEffects() {
+            const weatherEffects = document.getElementById('weatherEffects');
+            if (!weatherEffects) return;
+            
+            for(let i = 0; i < 15; i++) {
+                const petal = document.createElement('div');
+                petal.style.position = 'absolute';
+                petal.style.width = '6px';
+                petal.style.height = '6px';
+                petal.style.background = ['#ffb3ba', '#ffdfba', '#ffffba', '#baffc9', '#bae1ff'][Math.floor(Math.random() * 5)];
+                petal.style.borderRadius = '50%';
+                petal.style.left = Math.random() * 100 + '%';
+                const duration = (Math.random() * 4 + 3) + 's';
+                const delay = Math.random() * 2 + 's';
+                petal.style.animation = `snowFall ${duration} linear infinite`;
+                petal.style.animationDelay = delay;
+                petal.style.opacity = '0.7';
+                weatherEffects.appendChild(petal);
+            }
+        }
+
+        function showWeatherMessage(message) {
+            const speech = document.getElementById('sunnySpeech');
+            const speechText = document.getElementById('speechText');
+            
+            if (!speech || !speechText) return;
+            
+            speechText.innerHTML = `<strong>Weather Update!</strong><br>${message}`;
+            speech.style.display = 'block';
+            
+            setTimeout(() => {
+                speech.style.display = 'none';
+            }, 4000);
+        }
+
+        function showChirp(el) {
+            const bubble = el.querySelector('.chirp-bubble');
+            bubble.style.display = 'block';
+            setTimeout(() => { bubble.style.display = 'none'; }, 1500);
+        }
+
+        function showSafetyTip() {
+            const tipBubble = document.getElementById('safetyTipBubble');
+            const tipText = document.getElementById('safetyTipText');
+            
+            if (!tipBubble || !tipText) return;
+            
+            tipText.textContent = safetyTips[currentTipIndex];
+            tipBubble.style.display = 'block';
+            
+            currentTipIndex = (currentTipIndex + 1) % safetyTips.length;
+        }
+
+        function closeSafetyTip() {
+            const tipBubble = document.getElementById('safetyTipBubble');
+            if (tipBubble) tipBubble.style.display = 'none';
+        }
+
+        function showSunnyMessage() {
+            const speech = document.getElementById('sunnySpeech');
+            const speechText = document.getElementById('speechText');
+            
+            if (!speech || !speechText) return;
+            
+            speechText.innerHTML = sunnyMessages[currentMessageIndex];
+            speech.style.display = 'block';
+            
+            setTimeout(() => {
+                speech.style.display = 'none';
+            }, 3000);
+            
+            currentMessageIndex = (currentMessageIndex + 1) % sunnyMessages.length;
+        }
+
+        // Initialize when page loads
+        window.onload = () => {
+            console.log('Page loaded successfully!');
+            console.log('Weather scene found:', document.getElementById('weatherScene') ? 'Yes' : 'No');
+            
+            // Flower interaction system
+            const flower = document.getElementById('flower');
+            const flowerPetals = document.getElementById('flower-petals');
+            const sparkles = document.getElementById('flower-sparkles');
+            const sunny = document.querySelector('[style*="duckWalk"]');
+            const sunnySpeech = document.getElementById('sunnySpeech');
+            const speechText = document.getElementById('speechText');
+
+            if (flower && flowerPetals && sparkles && sunny && sunnySpeech && speechText) {
+                let wowShown = false;
+
+                function checkSunnyPosition() {
+                    const flowerX = flower.getBoundingClientRect().left;
+                    const sunnyX = sunny.getBoundingClientRect().left;
+
+                    if (sunnyX + 120 > flowerX && sunnyX < flowerX + 80) {
+                        flowerPetals.style.transform = "scale(1)";
+                        sparkles.style.display = "block";
+
+                        if (!wowShown) {
+                            wowShown = true;
+                            flowerInteraction(); // Trigger flower personality
+                            speechText.innerHTML = "<strong>Wow!</strong> Just like our safety culture - beautiful when we all work together!";
+                            sunnySpeech.style.display = "block";
+                            setTimeout(() => {
+                                sunnySpeech.style.display = "none";
+                                speechText.innerHTML = "<strong>Hi!</strong> I'm <em>Sunny</em> the Safety Duck!";
+                            }, 3500);
+                        }
+                    } else {
+                        flowerPetals.style.transform = "scale(0.8)";
+                        sparkles.style.display = "none";
+                        wowShown = false;
+                    }
+
+                    requestAnimationFrame(checkSunnyPosition);
+                }
+
+                requestAnimationFrame(checkSunnyPosition);
+            } else {
+                console.log('Flower elements status:');
+                console.log('flower:', flower ? 'Found' : 'Missing');
+                console.log('flowerPetals:', flowerPetals ? 'Found' : 'Missing');
+                console.log('sparkles:', sparkles ? 'Found' : 'Missing');
+                console.log('sunny:', sunny ? 'Found' : 'Missing');
+            }
+
+            // Auto-update safety streak counter
+            function updateSafetyStreak() {
+                const streakElement = document.getElementById('safetyStreak');
+                if (streakElement && Math.random() < 0.1) {
+                    let currentStreak = parseInt(streakElement.textContent);
+                    streakElement.textContent = currentStreak + 1;
+                }
+            }
+
+            setInterval(updateSafetyStreak, 30000);
+            
+            // Start flower idle mood updates
+            setInterval(updateFlowerIdleMood, 45000); // Check every 45 seconds
+        };
+
+        // Close safety tip when clicking outside
+        document.addEventListener('click', function(event) {
+            const tipBubble = document.getElementById('safetyTipBubble');
+            if (tipBubble && tipBubble.style.display === 'block' && !tipBubble.contains(event.target)) {
+                const clickedElement = event.target.closest('[onclick*="showSafety"]');
+                if (!clickedElement) {
+                    tipBubble.style.display = 'none';
+                }
+            }
+        });
+    </script>
